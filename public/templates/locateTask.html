@@ -1,0 +1,6 @@
+<div ng-show="connectedReader">
+    <button class="hugeButton btn btn-primary" ui-sref="bopus">BOPUS Order</button>
+    <button class="hugeButton btn btn-primary" ui-sref="search">Single Item</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

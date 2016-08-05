@@ -1,0 +1,8 @@
+<div ng-show="connectedReader">
+    <div class="connectedCheckBox">
+        <input type="checkbox" ng-model="beeper" ng-click="setBeeper()" id="action"><label for="action"></label>
+        Beeper
+    </div>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

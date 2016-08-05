@@ -1,0 +1,19 @@
+<div class="screen" ng-show="connectedReader">
+
+    <div class="locateDisplay">
+        <h4>{{item.item}} in {{item.dept}}</h4>
+        <br>
+        <div ng-repeat="tag in tags">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{tag.proximity}}" aria-valuemin="0" aria-valuemax="100" style="width:{{tag.proximity}}%"></div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="invSave bigButton btn btn-success" ng-if="task=='bopus' && !foundAll" ng-click="found()">Found It</button>
+    <button class="invSave bigButton btn btn-success" ng-if="task=='bopus' && foundAll" ui-sref="locateTask">Done</button>
+    <button class="invStart bigButton btn btn-primary" ng-show="!locating" ng-click="startLocate()">Locate</button>
+    <button class="invStart bigButton btn btn-warning" ng-show="locating" ng-click="stopLocate()">Stop Locating</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

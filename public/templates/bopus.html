@@ -1,0 +1,6 @@
+<div class="screen" ng-show="connectedReader">
+    <div id="tree"></div>
+    <button class="invComplete bigButton btn btn-primary" ng-show="selected" ui-sref="locate({task:'bopus'})">Continue</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

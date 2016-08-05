@@ -1,0 +1,6 @@
+<div ng-show="connectedReader">
+    <button class="hugeButton btn btn-primary" ng-click="goTo('schedule')">Scheduled Count</button>
+    <button class="hugeButton btn btn-primary" ng-click="goTo('select')">Count Now</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

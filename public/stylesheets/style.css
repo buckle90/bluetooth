@@ -1,0 +1,264 @@
+h4 {
+    margin-top: 0px;
+}
+
+.connected {
+    color: blue;
+}
+
+.tagInput {
+    width: 100%;
+}
+
+.beeperToggler {
+    position: relative;
+    top: 3px;
+}
+
+.display {
+    height: 353px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+#mapid { height: 200px; }
+
+#itemMap { height: 200px; }
+
+.bigInput, .bigButton {
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.hugeButton {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.progress {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    line-height: 43px;
+    font-size: 18px;
+}
+
+.counter {
+    text-align: center;
+    font-size: 18px;
+}
+
+tr {
+    height: 50px;
+    border-bottom: 1px solid;
+}
+
+td, th {
+    padding: 5px;
+}
+
+tbody {
+    border: 1px solid;
+}
+
+.toggle {
+    width: 83px;
+    padding-left: 11px;
+}
+
+.searchTree {
+    height: 307px;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+.locateDisplay {
+    height: 54vh;
+    overflow: auto;
+}
+
+.inventoryDisplay {
+/*    height: 408px;*/
+    height: 83%;
+}
+
+.invStart {
+    position: absolute;
+    width: 91%;
+    bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.invComplete {
+    position: absolute;
+    width: 91%;
+    bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.invReset {
+    position: absolute;
+    width: 91%;
+    bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.invSave {
+    position: absolute;
+    width: 91%;
+    bottom: 83px;
+    margin-bottom: 0px;
+}
+
+.readersList {
+    height: 407px;
+    overflow: auto;
+}
+
+.loading {
+    height: 200px;
+    position: relative;
+    margin: auto;
+    top: 125px;
+    left: 32px;
+}
+
+.countLabel {
+    width: 177px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+}
+
+.itemLabel {
+    width: 125px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    padding-top: 0px;
+}
+
+.MapLabel {
+    width: 200px;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    padding-top: 2px;
+    font-weight: bolder;
+}
+
+.countInfo {
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.countTag {
+    position: relative;
+    padding: 5px;
+}
+
+.moreInfo {
+/*    top: 118px;*/
+/*    position: relative;*/
+}
+
+.invDisplay {
+    position: absolute;
+/*    bottom: 164px;*/
+    height: 73%;
+    width: 91%;
+}
+
+.treesActive {
+    overflow: auto;
+    height: 89%;
+    margin-top: 5px;
+}
+
+.treesComplete {
+    overflow: auto;
+    height: 66%;
+    margin-top: 5px;
+}
+
+.treesHiddenActive {
+    overflow: auto;
+    height: 60vh;
+    margin-top: 5px;
+}
+
+.treesHiddenComplete {
+    overflow: auto;
+    height: 45vh;
+    margin-top: 5px;
+}
+
+.screen {
+    height: 83.5vh;
+    overflow: auto;
+}
+
+.invDisplay > .btn-group {
+    width: 100%;
+}
+
+.invDisplay > .btn-group > .toggle {
+    width: 50%;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 30px;
+    font-size: 25px;
+    top: 22px;
+    color: gray;
+}
+
+.searchInput {
+    padding-right: 45px;
+}
+
+
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+input[type=checkbox]:checked + label {
+    color: white;
+}
+
+input[type=checkbox]:checked + label:after {
+    position: absolute;
+    left: -1px;
+    top: -7px;
+    color: #337ab7;
+    content: '\2713';
+    font-size: 23px;
+} 
+
+.connectedCheckBox label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: -6px;
+    margin-right: 7px;
+    font-weight: 700;
+}

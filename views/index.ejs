@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZebraWeb</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+        <script src="scripts/angular/angular.min.js"></script>
+        <script src="scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="scripts/angular-cookies/angular-cookies.js"></script>
+        <script src="scripts/angular-websocket/dist/angular-websocket.js"></script>
+        <script src="scripts/jquery/dist/jquery.min.js"></script>
+        <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="scripts/bootstrap/dist/js/bootstrap-treeview.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+        <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+        
+        <script src="/javascripts/angularApp.js"></script>
+        <script language="javascript" src="/javascripts/inventoryController.js"></script>
+        <script src="/javascripts/connectController.js"></script>
+        <script src="/javascripts/locateController.js"></script>
+        <script src="/javascripts/settingsController.js"></script>
+        <script src="/javascripts/historyController.js"></script>
+        <script src="/javascripts/countController.js"></script>
+        <script src="/javascripts/accessController.js"></script>
+        <script src="/javascripts/loginController.js"></script>
+        <script src="/javascripts/selectController.js"></script>
+        <script src="/javascripts/taskController.js"></script>
+        <script src="/javascripts/scheduleController.js"></script>
+        <script src="/javascripts/searchController.js"></script>
+        <script src="/javascripts/itemController.js"></script>
+        <script src="/javascripts/locateTaskController.js"></script>
+        <script src="/javascripts/bopusController.js"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="scripts/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="scripts/bootstrap/dist/css/bootstrap-treeview.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/menu.css">
+        
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+    </head>
+    <body ng-app="zebra" ng-controller="MainCtrl">
+        <!--Slider menu-->
+        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <a class="navmenu-brand" href="#">RFID Reader</a>
+          <ul class="nav navmenu-nav">
+            <li ng-click="switch('history')" ng-class="{ 'active': active=='history' }"><a ui-sref="history">History</a></li>
+            <li ng-click="switch('inventory')" ng-class="{ 'active': active=='inventory' }"><a ui-sref="task">Inventory</a></li>
+            <li ng-click="switch('locate')" ng-class="{ 'active': active=='locate' }"><a ui-sref="locateTask">Locate</a></li>
+            <li ng-click="switch('access')" ng-class="{ 'active': active=='access' }"><a ui-sref="access">Read/Write</a></li>
+            <li ng-click="switch('settings')" ng-class="{ 'active': active=='settings' }"><a ui-sref="settings">Settings</a></li>
+            <li ng-click="switch('connect')" ng-class="{ 'active': active=='connect' }"><a ui-sref="connect">Connect</a></li>
+          </ul>
+        </nav>
+        
+        <div class="navbar navbar-default navbar-fixed-top">
+          <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h3 class="stateTitle">{{active}}</h3>
+        </div>
+        <!--/Slider menu-->
+        <div class="app-body container" ui-view></div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<div ng-show="connectedReader">
+    <p ng-show="message">{{message}}</p>
+    <input class="bigInput" ng-model="id" placeholder="Tag ID" style="width:100%">
+    <br>
+    <button class="bigButton btn btn-primary" ng-click="read(id)">Read</button>
+    <br>
+    <br>
+    <input class="bigInput" ng-show="data!='' && data" ng-model="data" placeholder="Tag Data" style="width:100%"/>
+    <br>
+    <button class="bigButton btn btn-warning" ng-show="data!='' && data" ng-click="write(id, data)">Write</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

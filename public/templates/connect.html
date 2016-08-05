@@ -1,0 +1,14 @@
+<img ng-show="loading" class="loading" src="images/spinner.gif">
+<div class="screen" ng-show="!loading">
+    <div class="readersList">
+        <h4>{{message}}</h4>
+        <div class="connectedCheckBox" ng-repeat="reader in readers" ng-click="connect(reader.name)">
+            <input type="checkbox" disabled ng-model="reader.connected" id="action"><label for="action"></label>
+            {{reader.name}}
+<!--            <div class="readerLabel">{{reader.name}}</div>-->
+
+        </div>
+    </div>
+
+    <button class="invComplete bigButton btn btn-primary" ng-click="refresh()">Refresh</button>
+</div>

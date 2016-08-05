@@ -1,0 +1,43 @@
+<img ng-show="!cycleCount" class="loading" src="images/spinner.gif">
+
+<div class="screen" ng-show="cycleCount">
+    <div class="btn-group" data-toggle="buttons">
+      <label ng-click="display='info'" class="btn btn-primary toggle active">
+        <input type="radio" name="info" id="info" autocomplete="off" checked> Info
+      </label>
+      <label ng-click="display='found'" class="btn btn-primary toggle">
+        <input type="radio" name="found" id="found" autocomplete="off"> Found
+      </label>
+      <label ng-click="display='missing'" class="btn btn-primary toggle">
+        <input type="radio" name="missing" id="missing" autocomplete="off"> Missing
+      </label>
+        <label ng-click="display='map'" class="btn btn-primary toggle">
+        <input type="radio" name="map" id="map" autocomplete="off"> Heat Map
+      </label>
+    </div>
+
+    <div class="display">
+        <div ng-show="display=='info'">
+            <div class="countLabel">Date:</div><div class="countInfo">{{cycleCount.date}}</div><br>
+            <div class="countLabel">User:</div><div class="countInfo">{{cycleCount.user}}</div><br>
+            <div class="countLabel">Floor Pad:</div><div class="countInfo">MENS ACTIVE</div><br>
+            <div class="countLabel">Department:</div><div class="countInfo">MENS TEAM APPAREL</div><br>
+            <div class="countLabel">Found:</div><div class="countInfo">{{tags.length}}/{{cycleCount.targetCount}}</div><br>
+            <div class="countLabel">Additive Counts:</div><div class="countInfo">{{additions.length}}</div><br>
+        </div>
+
+        <div ng-show="display=='found'">
+            <div id="foundTree"></div>
+        </div>
+
+        <div ng-show="display=='missing'">
+            <div id="missingTree"></div>
+        </div>
+
+        <div ng-show="display=='map'">
+            <div id="mapid"></div>
+        </div>
+    </div>
+
+    <button class="invComplete bigButton btn btn-primary" ui-sref="inventory({department: cycleCount.deptID, floorPad: cycleCount.floorpadID, parent: cycleCount._id})">Continue Count</button>
+</div>

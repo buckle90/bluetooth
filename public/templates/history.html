@@ -1,0 +1,14 @@
+<div class="screen">
+<table style="width:100%">
+    <tr>
+        <th>Date</th>
+        <th>Count</th>
+        <th>User</th>
+    </tr>
+    <tr ng-repeat="count in cycleCounts" ng-click="open(count._id)">
+        <td>{{count.date}}</td> 
+        <td>{{count.count}}/{{count.targetCount}}</td> 
+        <td>{{count.user}}</td> 
+    </tr>
+</table>
+</div>

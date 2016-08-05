@@ -1,0 +1,43 @@
+<div class="screen" ng-show="connectedReader">
+    <h4 ng-show="!parent && !moreInfo">
+        Cycle count for<br>MENS ACTIVE: MENS TEAM APPAREL
+    </h4>
+    <h4 ng-show="parent">Additive count for cycle count ID: {{parent}}</h4>
+    <p class="counter" ng-show="(inventoryActive || inventoryComplete) && !moreInfo"><br>{{uniqueItems}} / {{targetAmount}}</p>
+    <div ng-show="inventoryActive || inventoryComplete" class="progress" ng-click="showInfo(true)">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percentage}}%">{{percentage}}%</div>
+    </div>
+    
+    
+    
+    <div class="invDisplay" ng-show="moreInfo">
+        <div class="hideable btn-group" data-toggle="buttons">
+          <label ng-click="display='found'" class="btn btn-primary toggle active">
+            <input type="radio" name="found" id="found" autocomplete="off" checked> Found
+          </label>
+          <label ng-click="display='missing'" class="btn btn-primary toggle">
+            <input type="radio" name="missing" id="missing" autocomplete="off"> Missing
+          </label>
+        </div>   
+        
+        <div ng-class='{treesActive: inventoryActive, treesComplete: inventoryComplete, treesHiddenActive: (hidden && inventoryActive), treesHiddenComplete: (hidden && inventoryComplete)}'>
+            <div class="hideable" ng-show="display=='found'">
+                <div id="foundTree"></div>
+            </div>
+
+            <div class="hideable" ng-show="display=='missing'">
+                <div id="missingTree"></div>
+            </div>
+            
+            <div ui-view></div>
+        </div>
+    </div>
+    
+    
+    <button ng-class="{moreInfo: moreInfo}" class="invStart bigButton btn btn-success" ng-show='dept != "" && floorPad != "" && !inventoryActive && !inventoryComplete' ng-click="startInventory(floorPad, dept)">Start Inventory</button>
+    <button ng-class="{moreInfo: moreInfo}" class="invComplete bigButton btn btn-primary" ng-show='inventoryActive && !inventoryComplete' ng-click="stopInventory()">Complete Inventory</button>
+    <button ng-class="{moreInfo: moreInfo}" class="invSave bigButton btn btn-primary" ng-disabled="finalCount == 0" ng-show='!inventoryActive && inventoryComplete' ng-click="sendInventory()">Save Inventory</button>
+    <button ng-class="{moreInfo: moreInfo}" class="invReset bigButton btn btn-warning" ng-show='!inventoryActive && inventoryComplete' ng-click="resetInventory(); moreInfo=false">Reset Inventory</button>
+</div>
+
+<a ng-show="!connectedReader" ui-sref="connect">Connect to a reader.</a>

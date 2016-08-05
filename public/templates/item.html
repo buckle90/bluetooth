@@ -1,0 +1,14 @@
+<div class="screen">
+    <div class="itemLabel">UPC:</div><div class="countInfo">{{item['UPC-NBR']}}</div><br>
+    <div class="itemLabel">EPC:</div><div class="countInfo">{{item.epcData.epcID}}</div><br>
+    <div class="itemLabel">SKU Desc:</div><div class="countInfo">{{item['SKU-DESC-NAME']}}</div><br>
+    <div class="itemLabel">Brand:</div><div class="countInfo">{{item.BRAND}}</div><br>
+    <div class="itemLabel">Floor Pad:</div><div class="countInfo">{{item['FLR-PAD-DESC']}}</div><br>
+    <div class="itemLabel">Department:</div><div class="countInfo">{{item['DEPT-NM']}}</div><br>
+    <div class="itemLabel">Major Class:</div><div class="countInfo">{{item['MAJ-CL-NM']}}</div><br>
+    <div class="itemLabel">Size:</div><div class="countInfo">{{item['SIZE-DESC']}}</div><br>
+    <div class="itemLabel">Date First Seen:</div><div class="countInfo">{{item.epcData.dateFirstSeen}}</div><br>
+    <div class="itemLabel">Date Last Seen:</div><div class="countInfo">{{item.epcData.dateLastSeen}}</div><br>
+    <div class="MapLabel">Last Known Location:</div>
+    <div id="itemMap"></div>
+</div>
